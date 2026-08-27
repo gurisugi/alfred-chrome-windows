@@ -6,8 +6,8 @@ function run() {
     return JSON.stringify({
       items: [
         {
-          title: "Google Chromeが起動していません",
-          subtitle: "Chromeを起動してから再度実行してください",
+          title: "Google Chrome is not running",
+          subtitle: "Launch Google Chrome and try again",
           valid: false,
         },
       ],
@@ -17,17 +17,18 @@ function run() {
   const chrome = Application("Google Chrome");
   const items = chrome.windows().map((w) => {
     const id = String(w.id());
+    const n = w.tabs.length;
     return {
       uid: id,
       title: w.name(),
-      subtitle: `タブ ${w.tabs.length}個`,
+      subtitle: n === 1 ? "1 tab" : `${n} tabs`,
       arg: id,
     };
   });
 
   if (items.length === 0) {
     items.push({
-      title: "Chromeのウィンドウがありません",
+      title: "No Google Chrome windows",
       valid: false,
     });
   }

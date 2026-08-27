@@ -25,7 +25,7 @@
 	<key>createdby</key>
 	<string>gurisugi</string>
 	<key>description</key>
-	<string>Chromeのウィンドウ一覧を表示して選択したウィンドウにフォーカス</string>
+	<string>List Google Chrome windows and focus the selected one</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -58,7 +58,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>ウィンドウ取得中…</string>
+				<string>Fetching windows…</string>
 				<key>script</key>
 				<string>osascript -l JavaScript ./list_windows.js</string>
 				<key>scriptargtype</key>
@@ -66,7 +66,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Chromeウィンドウを選択してフォーカス</string>
+				<string>Focus a Google Chrome window</string>
 				<key>title</key>
 				<string>Chrome Windows</string>
 				<key>type</key>
@@ -106,7 +106,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Chromeのウィンドウ一覧をウィンドウ名で表示し、選択したウィンドウにフォーカスを移します。</string>
+	<string>List Google Chrome windows by their (custom) window names and focus the selected one. Works best with Chrome's "Name window..." feature.</string>
 	<key>uidata</key>
 	<dict>
 		<key>33CBE484-64D0-4D81-B8A8-106E860413E5</key>

@@ -1,40 +1,64 @@
 # alfred-chrome-windows
 
-Google Chromeのウィンドウ一覧を表示して、選択したウィンドウにフォーカスを移すAlfred Workflow。
+An [Alfred](https://www.alfredapp.com/) workflow that lists Google Chrome windows and focuses the selected one.
 
-Chromeの「ウィンドウに名前を付ける」機能（タブバー右クリック → ウィンドウに名前を付ける）で
-命名したウィンドウ名がそのまま一覧に表示されるので、名前で絞り込んでEnterでフォーカスを移せる。
+It works best with Chrome's **"Name window..."** feature (right-click the tab strip → *Name window...*): the names you give your windows show up as the list titles, so you can jump to a window by name.
 
-## 使い方
+日本語版READMEは [README.ja.md](README.ja.md) を参照してください。
 
-1. Alfredを開いて `chrome` と入力（Chrome.app等と並んで「Chrome Windows」が候補に出る）
-2. 選択するとChromeのウィンドウ一覧（ウィンドウ名 + タブ数）が表示される
-3. `chrome <ウィンドウ名>` のようにスペースに続けて入力すると絞り込みができ、
-   Enterで選択したウィンドウが前面化される（最小化されているウィンドウも復元して前面化する）
+## Usage
 
-## インストール
+1. Open Alfred and type `chrome` — "Chrome Windows" appears alongside your other Chrome-related results
+2. Select it to see all Chrome windows (window name + tab count)
+3. Type `chrome <window name>` to filter, then press Enter to bring that window to the front
+   (minimized windows are restored and focused as well)
+
+## Install
+
+### From a release
+
+Download the `.alfredworkflow` file from [Releases](../../releases) and double-click it.
+
+### From source (symlink)
 
 ```sh
 ./install.sh
 ```
 
-`workflow/` をAlfredのworkflowsディレクトリにsymlinkする。リポジトリ内のスクリプトを
-編集すると即Alfredに反映される。
+This symlinks `workflow/` into Alfred's workflows directory, so edits to the scripts in this
+repository take effect immediately.
 
-## 初回実行時の許可
+## First run: macOS permissions
 
-初回実行時にmacOSのオートメーション許可ダイアログが表示されるので許可すること。
+On first run, macOS asks you to allow Alfred to control other apps. Grant both:
 
-- Alfred → Google Chrome（ウィンドウ一覧の取得・操作）
-- Alfred → System Events（起動チェック・前面化）
+- Alfred → Google Chrome (to list and manipulate windows)
+- Alfred → System Events (to check Chrome is running and raise windows)
 
-「システム設定 → プライバシーとセキュリティ → オートメーション」から後で変更できる。
+You can change these later in System Settings → Privacy & Security → Automation.
 
-## 構成
+## Requirements
 
-| ファイル | 役割 |
+- Alfred 5 with the Powerpack
+- Google Chrome
+- No other dependencies — the scripts are plain JXA run via `osascript`
+
+## Files
+
+| File | Role |
 |---|---|
-| `workflow/info.plist` | Workflow定義（Script Filter `cw` → Run Script） |
-| `workflow/list_windows.js` | JXA。ウィンドウ一覧をScript Filter JSONで出力 |
-| `workflow/focus_window.js` | JXA。指定IDのウィンドウを前面化 |
-| `install.sh` | Alfredへのsymlinkインストール |
+| `workflow/info.plist` | Workflow definition (Script Filter `chrome` → Run Script) |
+| `workflow/list_windows.js` | JXA: outputs the window list as Script Filter JSON |
+| `workflow/focus_window.js` | JXA: brings the window with the given ID to the front |
+| `install.sh` | Symlink install for development |
+| `build.sh` | Packages `dist/Chrome-Windows.alfredworkflow` for distribution |
+
+## Build a release artifact
+
+```sh
+./build.sh
+```
+
+## License
+
+[MIT](LICENSE)
