@@ -50,22 +50,6 @@ osascript -e 'tell application id "com.runningwithcrayons.Alfred" to reload work
 - Google Chrome
 - 依存なし（JXAスクリプトを `osascript` で実行するだけ）
 
-## 構成
-
-| ファイル | 役割 |
-|---|---|
-| `workflow/info.plist` | Workflow定義（Script Filter `chrome` → Run Script） |
-| `workflow/list_windows.js` | JXA。ウィンドウ一覧をScript Filter JSONで出力 |
-| `workflow/focus_window.js` | JXA。指定IDのウィンドウを前面化 |
-| `install.sh` | 開発用のsymlinkインストール |
-| `build.sh` | 配布用 `dist/Chrome-Windows.alfredworkflow` の生成 |
-
-## 配布物のビルド
-
-```sh
-./build.sh
-```
-
 ## ライセンス
 
 [MIT](LICENSE)

@@ -43,22 +43,6 @@ You can change these later in System Settings → Privacy & Security → Automat
 - Google Chrome
 - No other dependencies — the scripts are plain JXA run via `osascript`
 
-## Files
-
-| File | Role |
-|---|---|
-| `workflow/info.plist` | Workflow definition (Script Filter `chrome` → Run Script) |
-| `workflow/list_windows.js` | JXA: outputs the window list as Script Filter JSON |
-| `workflow/focus_window.js` | JXA: brings the window with the given ID to the front |
-| `install.sh` | Symlink install for development |
-| `build.sh` | Packages `dist/Chrome-Windows.alfredworkflow` for distribution |
-
-## Build a release artifact
-
-```sh
-./build.sh
-```
-
 ## License
 
 [MIT](LICENSE)
