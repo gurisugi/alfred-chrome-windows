@@ -1,4 +1,4 @@
-// 引数で渡されたIDのChromeウィンドウを前面化してフォーカスする
+// Bring the Chrome window with the given ID to the front and focus it
 function run(argv) {
   const id = String(argv[0]);
   const chrome = Application("Google Chrome");
@@ -13,7 +13,7 @@ function run(argv) {
   win.index = 1;
   chrome.activate();
 
-  // index=1 + activate だけでは前面化しないケースがあるため、AXRaiseで保険をかける
+  // index=1 + activate alone sometimes fails to raise the window, so AXRaise as a fallback
   try {
     const title = win.name();
     const proc = Application("System Events").processes.byName("Google Chrome");
@@ -22,6 +22,6 @@ function run(argv) {
       axWin.actions.byName("AXRaise").perform();
     }
   } catch (e) {
-    // アクセシビリティ権限がない等で失敗しても、index=1 + activate は済んでいるので無視
+    // Ignore failures (e.g. missing accessibility permission) — index=1 + activate has already run
   }
 }

@@ -1,4 +1,4 @@
-// Chromeのウィンドウ一覧をAlfred Script Filter形式のJSONで出力する
+// Output the list of Chrome windows as Alfred Script Filter JSON
 function run() {
   const se = Application("System Events");
   const running = se.processes.whose({ name: "Google Chrome" }).length > 0;

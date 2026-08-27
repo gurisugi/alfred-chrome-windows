@@ -1,5 +1,5 @@
 #!/bin/bash
-# 配布用の .alfredworkflow（workflow/ の中身をルートに持つzip）を dist/ に生成する
+# Build the distributable .alfredworkflow (a zip with the contents of workflow/ at its root) into dist/
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
