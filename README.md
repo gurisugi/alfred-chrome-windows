@@ -15,18 +15,7 @@ It works best with Chrome's **"Name window..."** feature (right-click the tab st
 
 ## Install
 
-### From a release
-
 Download the `.alfredworkflow` file from [Releases](../../releases) and double-click it.
-
-### From source (symlink)
-
-```sh
-./install.sh
-```
-
-This symlinks `workflow/` into Alfred's workflows directory, so edits to the scripts in this
-repository take effect immediately.
 
 ## First run: macOS permissions
 

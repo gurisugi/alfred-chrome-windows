@@ -16,24 +16,7 @@ Chromeの「ウィンドウに名前を付ける」機能（タブバー右ク�
 
 ## インストール
 
-### リリースから
-
 [Releases](../../releases) から `.alfredworkflow` ファイルをダウンロードしてダブルクリック。
-
-### ソースから（symlink）
-
-```sh
-./install.sh
-```
-
-`workflow/` をAlfredのworkflowsディレクトリにsymlinkする。リポジトリ内のスクリプトを
-編集すると即Alfredに反映される。`info.plist` を変更した場合は再読み込みが必要になることがある:
-
-```sh
-osascript -e 'tell application id "com.runningwithcrayons.Alfred" to reload workflow "com.gurisugi.alfred-chrome-windows"'
-```
-
-（`install.sh` は最後にこの再読み込みを自動実行する）
 
 ## 初回実行時の許可
 
