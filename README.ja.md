@@ -1,5 +1,7 @@
 # alfred-chrome-windows
 
+[English](README.md) | 日本語
+
 Google Chromeのウィンドウ一覧を表示して、選択したウィンドウにフォーカスを移すAlfred Workflow。
 
 Chromeの「ウィンドウに名前を付ける」機能（タブバー右クリック → ウィンドウに名前を付ける）で

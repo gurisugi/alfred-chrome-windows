@@ -1,10 +1,10 @@
 # alfred-chrome-windows
 
+English | [日本語](README.ja.md)
+
 An [Alfred](https://www.alfredapp.com/) workflow that lists Google Chrome windows and focuses the selected one.
 
 It works best with Chrome's **"Name window..."** feature (right-click the tab strip → *Name window...*): the names you give your windows show up as the list titles, so you can jump to a window by name.
-
-日本語版READMEは [README.ja.md](README.ja.md) を参照してください。
 
 ## Usage
 
